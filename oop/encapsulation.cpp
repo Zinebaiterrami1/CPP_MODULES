@@ -65,7 +65,7 @@ class Employee:AbstractEmployee
 
 class Developer:Employee
 {
-
+    
 };
 
 int main()
