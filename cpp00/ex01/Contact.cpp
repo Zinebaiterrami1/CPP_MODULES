@@ -66,8 +66,7 @@ std::string Contact::getLenghtString(std::string str)
 {
     if(str.length() > 9)
     {
-        str.substr(0, 9);
-        return (str + '.');
+        return (str.substr(0, 9) + '.');
     }
     else
         return (str);

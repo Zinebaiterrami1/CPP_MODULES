@@ -1,10 +1,24 @@
 #include "PhoneBook.hpp"
 
-PhoneBook :: PhoneBook()
+PhoneBook::PhoneBook()
 {
     i = 0;
     counter = 0;
     total_contacts = 0;
+}
+
+int ft_isnbr(std::string str)
+{
+    int i;
+
+    i = 0;
+    while(str[i])
+    {
+        if(!isdigit(str[i]))
+            return (0);
+        i++;
+    }
+    return (1);
 }
 
 void PhoneBook::addContacts()
@@ -21,6 +35,11 @@ void PhoneBook::addContacts()
     std::getline(std::cin, secret);
     std::cout << "your phone number: ";
     std::getline(std::cin, phonenumber);
+    while(!ft_isnbr(phonenumber))
+    {
+        std::cout << "digit only!" << std::endl;
+        std::getline(std::cin, phonenumber);
+    }
     if(firstname.empty() || lastname.empty() || nickname.empty()
         || secret.empty() || phonenumber.empty())
     {
@@ -35,7 +54,6 @@ void PhoneBook::addContacts()
     counter ++;
     if(total_contacts < 8)
         total_contacts ++;
-
     std::cout << "ADD SUCCESSFULLY"<< std::endl;
 }
 
@@ -53,7 +71,7 @@ void PhoneBook::searchContacts()
     if(std::cin.fail() || index < 0 || index > total_contacts)
     {
         std::cout << "must be between 0 && 9" << std::endl;
-        std::cin.clear();
+        // std::cin.clear();
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         return ;
     }

@@ -1,3 +1,6 @@
 #include "Zombie.hpp"
 
-Zombie::newZombie
+Zombie*::newZombie(std::string name)
+{
+    name = new std::string(name);
+}
