@@ -1,10 +1,10 @@
-NAME = Replace
+NAME = Brain
 
 CPP = c++
 
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = main.cpp replace.cpp\
+SRC = main.cpp\
 
 OBJ = $(SRC:.cpp=.o)
 

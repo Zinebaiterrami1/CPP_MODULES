@@ -1,5 +1,5 @@
-#ifndef FILE_HPP
-# define FILE_HPP
+#ifndef REPLACE_HPP
+# define REPLACE_HPP
 
 # include <iostream>
 # include <string>
