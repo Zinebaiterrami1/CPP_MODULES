@@ -7,7 +7,7 @@
 class Fixed
 {
     private:
-        int fixed_point_number;
+        int value;
         static const int fractional_bits = 8;
     public:
         /* Orthodox Canonical Form */
@@ -19,8 +19,8 @@ class Fixed
         int getRawBits( void ) const;
         void setRawBits( int const raw );
         /**************************/
-        Fixed(int const val);
-        Fixed(float const val);
+        Fixed(const int val);
+        Fixed(const float val);
 
         float toFloat( void ) const;
         int toInt( void ) const;
