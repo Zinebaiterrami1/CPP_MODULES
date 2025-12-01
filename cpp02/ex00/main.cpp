@@ -11,4 +11,3 @@ int main( void ) {
     std::cout << c.getRawBits() << std::endl;
     return 0;
 }
-     

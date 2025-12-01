@@ -25,7 +25,7 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& val)
     return *this;
 }
 
-ClapTrap::ClapTrap(std::string name) //
+ClapTrap::ClapTrap(std::string name)
 {
     Name = name;
     HitPoint = 10;
@@ -61,4 +61,5 @@ void ClapTrap::beRepaired(unsigned int amount)
         std::cout << "ClapTrap " << Name << "repairs itself, gaining " << amount << " hit points!" << std::endl;
     }
 }
+
 

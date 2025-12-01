@@ -46,12 +46,12 @@ Fixed::Fixed(int const val)
 Fixed::Fixed(float const val)
 {
     std::cout << "Float constructor called" << std::endl;
-    this->value = roundf(val * 256); //Multiplying by 256 moves the decimal part into the integer.
+    this->value = roundf(val * (1 << fractional_bits)); //Multiplying by 256 moves the decimal part into the integer.
 }
 
 float Fixed::toFloat( void ) const
 {
-    return (float)this->value / 256.0f; //or : (float)this->value / (1 << fractional_bits)
+    return (float)this->value / ( 1 << fractional_bits ); //or : (float)this->value / (1 << fractional_bits)
 }
 
 int Fixed::toInt( void ) const
@@ -62,7 +62,6 @@ int Fixed::toInt( void ) const
 std::ostream& operator<<(std::ostream& out, const Fixed& fixed)
 {
     out << fixed.toFloat();
-    //if i dont put toFloat i got segv? why?????
     return out;
 }
 

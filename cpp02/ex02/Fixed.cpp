@@ -109,19 +109,19 @@ Fixed Fixed::operator/(const Fixed& other)
     return Fixed( this->toFloat() / other.toFloat() );
 }
 
-Fixed& Fixed::operator++()
+Fixed& Fixed::operator++() //++x
 {
     ++value;
     return (*this);
 }
 
-Fixed& Fixed::operator--()
+Fixed& Fixed::operator--() //--x
 {
     --value;
     return (*this);
 }
 
-Fixed Fixed::operator++(int)
+Fixed Fixed::operator++(int) //x++
 {
     Fixed tmp;
 
