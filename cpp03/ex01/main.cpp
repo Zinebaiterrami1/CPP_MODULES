@@ -1,12 +1,16 @@
-/*
+# include "ScavTrap.hpp"
 
-ClapTrap luna("Luna");
-luna.attack("Enemy");
+int main()
+{
+    ClapTrap a("Bot 1");
+    ScavTrap b("Bot 2");
 
-luna.takeDamage(5);
-
-luna.beRepaired(3);
-
-luna.attack("Enemy2")
-
-*/
+    a.attack("Bot a");
+    a.takeDamage(5);
+    a.beRepaired(10);
+    std::cout << "---------------------------------------------" << std::endl;
+    b.attack("Bot b");
+    b.takeDamage(5);
+    b.beRepaired(10);
+    b.guardGate();
+}
