@@ -20,8 +20,6 @@ Cat& Cat::operator=(const Cat& other)
     if(this != &other)
     {
         this->type = other.type;
-        if(this->brain)
-            delete brain;
          brain = new Brain(*other.brain); //if i use this->brain = other.brain, this is a shollow copy and it cause, double free
     }
     return *this;
