@@ -1,12 +1,12 @@
 # include "WrongAnimal.hpp"
 
-WrongAnimal::WrongAnimal() : Animal()
+WrongAnimal::WrongAnimal()
 {
     std::cout << "WrongAnimal Default Constructor called" << std::endl;
     type = "default";
 }
 
-WrongAnimal::WrongAnimal(const WrongAnimal &other) : Animal(other)
+WrongAnimal::WrongAnimal(const WrongAnimal &other)
 {
     std::cout << "WrongAnimal Default Copy Constructor called" << std::endl;
     *this = other;

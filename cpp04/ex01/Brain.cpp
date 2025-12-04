@@ -33,6 +33,7 @@ void Brain::setIdea(int index, std::string idea)
     {
         this->ideas[index] = idea;
     }
+    return ;
 }
 
 std::string Brain::getIdea(int index)

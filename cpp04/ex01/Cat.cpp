@@ -11,7 +11,7 @@ Cat::Cat(const Cat &other) : Animal(other)
 {
     std::cout << "Cat Default Copy Constructor called" << std::endl;
     *this = other;
-    brain = new Brain();
+    brain = new Brain(*other.brain); 
 }
 
 Cat& Cat::operator=(const Cat& other)
@@ -19,8 +19,10 @@ Cat& Cat::operator=(const Cat& other)
     std::cout << "Cat Copy assignement operator called" << std::endl;
     if(this != &other)
     {
-        this->type = other.type; //other.getType 
-        this->brain = other.brain;
+        this->type = other.type;
+        if(this->brain)
+            delete brain;
+         brain = new Brain(*other.brain); //if i use this->brain = other.brain, this is a shollow copy and it cause, double free
     }
     return *this;
 }
