@@ -31,7 +31,8 @@ class Bureaucrat
         Bureaucrat(const Bureaucrat &other);
         Bureaucrat& operator=(const Bureaucrat &other);
         ~Bureaucrat();
-        void signForm(Form &form);
+        void signForm(AForm &form);
+        void executeForm(AForm const & form) const;
 };
 
 std::ostream& operator<<(std::ostream& out, const Bureaucrat& bureaucrat);

@@ -69,3 +69,14 @@ std::ostream& operator<<(std::ostream& out, const AForm& form)
     << " grade required to sign it : " << form.getGradeToSign()
     << " grade required to execute it : " << form.getGardeToExecute() << std::endl;
 }
+
+void AForm::executeAction(Bureaucrat const & executor)
+{
+    if(!is_signed)
+        throw FormNotSignedException();
+    if(executor.getGrade() > grade_to_execute)
+        throw GradeTooLowException();
+    else
+        throw GradeTooHighException();
+}
+

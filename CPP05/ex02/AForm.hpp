@@ -49,6 +49,7 @@ class AForm
         void beSigned(const Bureaucrat &bureaucrat);
 
         virtual void execute(Bureaucrat const & executor) const = 0;
+        void executeAction(Bureaucrat const & executor);
 };
 
 std::ostream& operator<<(std::ostream& out, const AForm& form);
