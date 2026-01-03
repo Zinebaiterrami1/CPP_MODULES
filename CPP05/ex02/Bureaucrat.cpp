@@ -95,5 +95,8 @@ void Bureaucrat::signForm(AForm& form)
 
 void Bureaucrat::executeForm(AForm const & form) const
 {
-    
+    if(form.execute(form.execute()))
+        std::cout << form.getName() << " executed " << form << std::endl;
+    else
+        std::cout << "Failed to execute" << std::endl;
 }
